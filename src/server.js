@@ -11,10 +11,7 @@ const cookieParser = require('cookie-parser')
 
 const app = express()
 
-app.use(
-  '/images/uploads',
-  express.static(path.join(__dirname, 'images', 'uploads'))
-)
+app.use('/images/uploads', express.static(path.join(__dirname, 'images', 'uploads')));
 
 app.use(bodyParser.json({ limit: '1mb' }))
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }))
@@ -23,10 +20,9 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(
   cors({
-    origin: ['https://foodeexplorerweb.netlify.app'],
+    origin: ['https://foodeexplorerweb.netlify.app','http://localhost:5173', 'http://127.0.0.1:5173'],
     credentials: true
-  })
-)
+  }))
 
 app.use(routes)
 
