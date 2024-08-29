@@ -23,7 +23,7 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(
   cors({
-    origin: ['https://foodeexplorerweb.netlify.app/'],
+    origin: ['https://foodeexplorerweb.netlify.app'],
     credentials: true
   })
 )
