@@ -20,7 +20,7 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(
   cors({
-    origin: ['https://foodexplorersvne.netlify.app'],
+    origin: ['https://foodexplorer-web-ecru.vercel.app'],
     credentials: true
   }))
 
