@@ -41,7 +41,7 @@ app.use((error, request, response, next) => {
   })
 })
 
-const PORT = process.env.SERVER_PORT || 3000
+const PORT = 3333
 app.listen(PORT, () =>
   console.log(`Server Food Explorer is running on Port ${PORT}`)
 )
