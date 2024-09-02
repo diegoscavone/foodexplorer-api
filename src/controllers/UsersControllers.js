@@ -6,9 +6,6 @@ const knex = require('../database/knex')
 const UserRepository = require('../repositories/UserRepository')
 const UserCreateService = require('../services/UserCreateService')
 
-const sqliteConnection = require('../database/sqlite')
-const { response } = require('express')
-
 class UsersController {
   async create(request, response) {
     const { name, email, password, isAdmin } = request.body

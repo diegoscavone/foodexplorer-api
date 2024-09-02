@@ -7,8 +7,7 @@ const { sign } = require('jsonwebtoken')
 class SessionController {
   async create(request, response) {
     const { email, password } = request.body
-    const user = await knex('users')
-    .where({ email }).first()
+    const user = await knex('users').where({ email }).first()
 
     if (!user) {
       throw new AppError('E-mail e/ou senha incorreta!', 401)
@@ -28,11 +27,11 @@ class SessionController {
 
     response.cookie('token', token, {
       httpOnly: true,
-      sameSite: 'Strict',
+      sameSite: 'none',
       secure: true,
       maxAge: 15 * 60 * 1000
     })
-    delete user.password 
+    delete user.password
     return response.json({ user })
   }
 }
